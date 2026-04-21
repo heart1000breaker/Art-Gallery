@@ -28,7 +28,6 @@ body {
 /* Permanent Gallery Lighting */
 .art-card {
   position: relative;
-  margin-top: 60px;
   background: #000;
   box-shadow: 
     0 40px 100px -20px rgba(0,0,0,1),
@@ -69,7 +68,7 @@ body {
   top: -45px;
   left: 0;
   right: 0;
-  height: 400px;
+  height: min(400px, 78vh);
   background: radial-gradient(ellipse at top, rgba(255, 255, 225, 0.3) 0%, rgba(255, 255, 225, 0.05) 60%, transparent 90%);
   pointer-events: none;
   z-index: 1;
@@ -91,4 +90,31 @@ body {
 
 .art-card:active {
   transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .gallery-lamp {
+    top: -28px;
+    width: 68px;
+    height: 10px;
+  }
+
+  .gallery-lamp::before {
+    top: -14px;
+    height: 14px;
+  }
+
+  .spotlight-beam {
+    top: -28px;
+    height: 220px;
+    filter: blur(14px);
+    opacity: 0.82;
+  }
+}
+
+@media (max-width: 520px) {
+  .spotlight-beam {
+    height: 180px;
+    opacity: 0.72;
+  }
 }
